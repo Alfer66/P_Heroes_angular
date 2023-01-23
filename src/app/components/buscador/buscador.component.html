@@ -1,0 +1,38 @@
+<h1>Buscando: <small> {{ termino }} </small></h1>
+<hr>
+
+<!-- Imprime mensaje de avisando si la busqueda no tuvo resultados -->
+<div class="row animated fadeIn Fast" *ngIf="heroes.length == 0">
+    <div class="col-md-13">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término: {{ termino }}
+        </div>
+    </div>
+</div>
+
+
+<!-- <app-heroe-terjata></app-heroe-terjata> -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
+
+
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col" *ngFor="let heroe of heroes; let i = index">
+        <div class="card h-100 animated fadeIn fast">
+            <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+            <div class="card-body">
+                <h5 class="card-title">{{ heroe.nombre }}</h5>
+                <p class="card-text">{{ heroe.bio }}</p>
+                <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+                <div class="d-grid gap-2">
+                    <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block" type="button">
+                        Ver más...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->
